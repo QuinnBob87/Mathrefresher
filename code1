@@ -1,0 +1,36 @@
+from random import random
+from random import randint
+import statistics
+#import matplotlib as mp
+#import scipy
+#import stats
+
+
+for x in range(10):
+  print(random())
+list = []
+for x in range(10):
+  y = randint(0, 10)
+  print(y)
+  list.append(y)
+print(list)
+list.sort()
+print(list)
+mean = sum(list) / len(list)
+print('Mean - ' + str(mean))
+if (len(list) % 2) == 0:
+  median = (list[int(len(list) / 2)]) + (list[int(len(list) / 2 - 1)]) / 2
+else:
+  median = list[int(len(list) / 2 - 0.5)]
+print('Median - ' + str(median))
+dfm = []
+x = 0
+while x < len(list):
+   z = abs(list[x] - mean)
+   dfm.append(z)
+   x = x + 1
+print(dfm)
+msd = sum(dfm) / len(dfm)
+print("median absolute deviation is " + str(msd))
+print("Variance of " + str(list[2]) + " is " + str(list[2] * (statistics.variance(list))))
+#print('Mode - ' + str(mode))
